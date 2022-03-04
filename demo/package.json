@@ -4,15 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config ./webpack.dev.config.js --mode development"
+    "dev": "webpack serve --config build/webpack.dev.js",
+    "build": "webpack --config build/webpack.prod.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "compression-webpack-plugin": "^9.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
     "webpack": "^5.69.1",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0"
   }
 }
