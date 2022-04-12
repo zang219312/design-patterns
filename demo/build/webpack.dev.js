@@ -13,6 +13,13 @@ module.exports = merge(common, {
     // 可通过数组的方式托管多个静态资源文件
     static: {
       directory: path.join(__dirname, '../public')
+    },
+    proxy: {
+      '/api/': {
+        target: 'http://localhost:8880'
+        /* pathRewrite: { '/api': '' },
+        changeOrigin: true */
+      }
     }
   }
 })

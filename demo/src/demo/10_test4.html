@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>观察者模式</title>
+</head>
+
+<body>
+  <div id="div1">
+    <a href="#">a1</a>
+    <a href="#">a2</a>
+    <a href="#">a3</a>
+    <a href="#">a4</a>
+    <a href="#">a5</a>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"> </script>
+  <script type="text/javascript">
+    const arr = [1, 2, 3]
+    const nodeList = document.getElementsByTagName("a")
+    const $a = $('a')
+
+    arr.forEach(item => {
+      console.log(item)
+    })
+
+    for (let i = 0; i < nodeList.length; i++) {
+      console.log(nodeList[i].innerHTML)
+    }
+
+    $a.each((key, ele) => {
+      console.log("🚀  key,ele", key, ele)
+
+    })
+
+    function each (data) {
+      // $(data) 生成迭代器
+      $(data).each((key, val) => {
+        console.log(key, val);
+      })
+    }
+
+    each(arr)
+    each(nodeList)
+    each($a);
+
+  </script>
+</body>
+
+</html>
